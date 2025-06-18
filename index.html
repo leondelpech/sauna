@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commun | Community Sauna Perth</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom soft pastel color palette and typography */
+        :root {
+            --bs-body-font-family: 'Lexend', sans-serif;
+            --bs-body-color: #57534E; /* Soft black */
+            --bs-body-bg: #FDF8F5; /* Warm off-white */
+            --commun-primary: #A7C7E7; /* Pastel Blue */
+            --commun-secondary: #F3D9DC; /* Pastel Pink */
+            --commun-accent: #B2D8B2; /* Muted Pastel Green */
+            --commun-dark: #57534E; 
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Lora', serif;
+        }
+
+        .navbar {
+            background-color: rgba(253, 248, 245, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: var(--commun-primary);
+            border-color: var(--commun-primary);
+            color: var(--commun-dark);
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #9ab9d9;
+            border-color: #9ab9d9;
+            color: var(--commun-dark);
+        }
+        
+        .btn-secondary {
+            background-color: var(--commun-secondary);
+            border-color: var(--commun-secondary);
+            color: var(--commun-dark);
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: #eecfcf;
+            border-color: #eecfcf;
+            color: var(--commun-dark);
+        }
+
+        .text-primary {
+            color: var(--commun-primary) !important;
+        }
+        
+        .bg-light-accent {
+             background-color: #F0F8F0; /* Lighter version of accent green */
+        }
+        
+        .section-icon {
+            font-size: 3rem;
+            color: var(--commun-primary);
+        }
+
+        .feature-card {
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        }
+
+        /* Hero Video Styles */
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: white; /* Make text white for contrast */
+        }
+        .hero-section .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+        }
+        .hero-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 40, 40, 0.5); /* Dark overlay for readability */
+            z-index: -1;
+        }
+        
+        /* Hide contact section by default */
+        #contact-section {
+            display: none;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav">
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fs-4" id="home-link" href="#">
+                <i class="bi bi-house-heart-fill text-primary"></i> Commun
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-home-link" href="#mission">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-home-link" href="#how">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-home-link" href="#pricing">Visit Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="main-content">
+        <!-- Hero Section with Video -->
+        <header class="hero-section">
+            <div class="video-background">
+                <video playsinline autoplay muted loop poster="https://placehold.co/1920x1080/F3D9DC/57534E?text=Serene+Sauna+View">
+                    <!-- Using a royalty-free stock video as a placeholder -->
+                    <source src="https://cdn.pixabay.com/video/2022/10/24/134420-763424912.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="overlay"></div>
+            <div class="container text-center position-relative">
+                <h1 class="display-3 font-display fw-bold">A sauna for the people.</h1>
+                <p class="lead col-lg-8 mx-auto my-4">We're building more than just a place to unwind. We're building a self-sustaining community asset, designed to give back. Welcome to Perth's first social enterprise sauna.</p>
+                <a href="#mission" class="btn btn-primary btn-lg px-4">Discover Our Vision</a>
+                <a href="#" class="btn btn-secondary btn-lg px-4" id="hero-contact-link">Bring Us To Your Community</a>
+            </div>
+        </header>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-5 bg-light-accent">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <i class="bi bi-bullseye section-icon mb-3"></i>
+                        <h2 class="display-5 font-display fw-bold">Our Mission is Simple</h2>
+                        <p class="lead mb-4">Build a Social Enterprise Sauna. Make it do good for its Community. Give it away to all.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex"><i class="bi bi-check-circle-fill text-success fs-4 me-2"></i><span>Partner with local clubs to build resilient communities.</span></li>
+                            <li class="mb-3 d-flex"><i class="bi bi-check-circle-fill text-success fs-4 me-2"></i><span>Return profits directly to community groups.</span></li>
+                            <li class="mb-3 d-flex"><i class="bi bi-check-circle-fill text-success fs-4 me-2"></i><span>Create permanent public infrastructure for health and wellness.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="https://placehold.co/500x500/A7C7E7/57534E?text=Community+Hub" class="img-fluid rounded-4 shadow" alt="People relaxing in a community space">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how" class="py-5">
+            <div class="container py-5">
+                <div class="text-center col-lg-8 mx-auto">
+                    <i class="bi bi-arrow-repeat section-icon mb-3"></i>
+                    <h2 class="display-5 font-display fw-bold">A New Way of Doing Business</h2>
+                    <p class="lead">We believe community assets should be in the hands of the community. Our model is designed to make that a reality.</p>
+                </div>
+                <div class="row mt-5 g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 p-4 text-center feature-card">
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">1. Built By Community</h3>
+                                <p>Through crowdfunding, Commun is built from its genesis by the very people who will use it. This tests demand, builds partnerships, and grows the good we can do from day one.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 p-4 text-center feature-card">
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">2. Reinvesting Profits</h3>
+                                <p>Instead of enriching shareholders, our profits are reinvested into local community groups, amplifying the wellbeing of the neighborhoods we serve.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 p-4 text-center feature-card">
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">3. The 5-Year Handover</h3>
+                                <p>After five years of operation, we hand over the entire asset—sauna, balance sheets, and all—to a community cooperative, creating permanent, self-sustaining infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-5 bg-light-accent">
+            <div class="container py-5">
+                <div class="text-center col-lg-8 mx-auto">
+                    <i class="bi bi-droplet-half section-icon mb-3"></i>
+                    <h2 class="display-5 font-display fw-bold">Relax, Unwind, Regenerate</h2>
+                    <p class="lead">Accessible, cost-conscious, and health-focused. Every visit supports your community.</p>
+                </div>
+                <div class="row justify-content-center mt-5 g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body p-5 d-flex flex-column">
+                                <h3 class="h4 fw-bold">Casual Session</h3>
+                                <p class="fs-1 fw-bold my-4">$35</p>
+                                <p class="text-muted flex-grow-1">Perfect for a drop-in to reset your body and mind. Enjoy full access to our facilities.</p>
+                                <a href="#" class="btn btn-secondary w-100 mt-4">Enquire Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-2 border-primary shadow">
+                            <div class="card-body p-5 d-flex flex-column">
+                                <p class="text-primary fw-bold">BEST VALUE</p>
+                                <h3 class="h4 fw-bold">Community Member</h3>
+                                <p class="fs-1 fw-bold my-4">$30<span class="fs-5 text-muted"> / week</span></p>
+                                <p class="text-muted flex-grow-1">Commit to your wellbeing and the community's. Enjoy unlimited sessions and be a core part of our mission.</p>
+                                <a href="#" class="btn btn-primary w-100 mt-4">Join The Community</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Contact Form Section -->
+    <section id="contact-section" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <i class="bi bi-people-fill" style="font-size: 3rem; color: var(--commun-primary);"></i>
+                        <h1 class="display-4 font-display fw-bold mt-3">Bring Us To Your Community</h1>
+                        <p class="lead">We partner with local clubs and communities. If you have a location in mind that would benefit from a Commun sauna, let us know!</p>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Proposed Club or Community Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="e.g., North Beach Surf Club" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Why is this a great spot for a Commun sauna?</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Proposal</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-5 bg-white border-top">
+        <div class="container text-center">
+            <p class="fs-5">123 Community Street, Perth WA 6000 | <a href="mailto:hello@communsauna.com.au" class="text-decoration-none text-dark">hello@communsauna.com.au</a></p>
+            <div class="mt-4">
+                <a href="#" class="fs-4 text-dark me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="fs-4 text-dark"><i class="bi bi-facebook"></i></a>
+            </div>
+            <hr class="my-4">
+             <p class="text-muted">&copy; 2025 Commun Sauna. A Social Enterprise for Perth.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Custom Page Switching JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.getElementById('main-content');
+            const contactSection = document.getElementById('contact-section');
+            const footer = document.getElementById('footer');
+
+            const showContactLinks = [
+                document.getElementById('contact-link'),
+                document.getElementById('hero-contact-link')
+            ];
+
+            const showHomeLinks = [
+                document.getElementById('home-link'),
+                ...document.querySelectorAll('.nav-home-link')
+            ];
+
+            function showContactPage(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none';
+                contactSection.style.display = 'block';
+                footer.style.display = 'none'; // Hide main footer on contact page
+                window.scrollTo(0, 0);
+            }
+
+            function showHomePage(e) {
+                // For scroll links, only prevent default if not already on the home view
+                if(mainContent.style.display === 'none') {
+                    e.preventDefault();
+                }
+                mainContent.style.display = 'block';
+                contactSection.style.display = 'none';
+                footer.style.display = 'block';
+            }
+
+            showContactLinks.forEach(link => link.addEventListener('click', showContactPage));
+            showHomeLinks.forEach(link => link.addEventListener('click', showHomePage));
+        });
+    </script>
+</body>
+</html>
